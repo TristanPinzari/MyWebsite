@@ -1,0 +1,398 @@
+:root {
+  --text-color: white;
+  --dark-grey: rgb(20, 20, 20);
+  --inactive: rgba(255, 255, 255, 0.5);
+  --shadow-s: inset 0 1px 2px #ffffff30, /* top highlight */ 0 1px 2px #00000030,
+    /* dark shadow */ 0 2px 4px #00000015; /* soft shadow */
+  --shadow-m: inset 0 1px 2px #ffffff50, /* top highlight */ 0 2px 4px #00000030,
+    /* dark shadow */ 0 4px 8px #00000015; /* soft shadow */
+  --shadow-l: inset 0 1px 2px #ffffff70, /* top highlight */ 0 4px 6px #00000030,
+    /* dark shadow */ 0 6px 10px #00000015; /* soft shadow */
+}
+
+* {
+  margin: 0;
+  transition: 0.5s;
+  color: var(--text-color);
+  font-family: "Google Sans Flex", sans-serif;
+}
+
+.fadeIn {
+  animation: fadeIn;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+@keyframes fadeIn {
+  from {
+    translate: 0 25px;
+    opacity: 0;
+  }
+  to {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  letter-spacing: 0.1rem;
+}
+
+.smallHeader {
+  font-size: clamp(1.25rem, 2vw, 2rem);
+}
+
+::-webkit-scrollbar {
+  width: 0.3vw;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: grey;
+  height: 10px;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: black;
+  padding-bottom: 5rem;
+}
+
+#navBar {
+  position: fixed;
+  left: 50%;
+  translate: -50% 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 0 0 16px 16px;
+  box-sizing: border-box;
+  padding: 50px 0 10px 0;
+  border: transparent 2px solid;
+  border-top: none;
+  transition: border 0.5s ease, backdrop-filter 0.5s ease,
+    padding 0.5s ease-out 0.5s;
+}
+
+#navBar[data-scrolled="true"] {
+  transition: padding 0.25s ease, border 0.25s ease 0.25s,
+    backdrop-filter 0.25s ease 0.25s;
+  padding: 10px 5px;
+  border: rgba(255, 255, 255, 0.5) 2px solid;
+  border-top: none;
+  backdrop-filter: blur(50px);
+}
+
+#navBar button {
+  background: none;
+  border: none;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  padding: 0 clamp(10px, 3vw, 75px);
+  color: var(--inactive);
+  text-shadow: 0 0 5px var(--inactive);
+  letter-spacing: 0.2rem;
+}
+
+@media (width <= 550px) {
+  #navBar button {
+    letter-spacing: 0;
+  }
+}
+
+#navBar button.active,
+#navBar button:hover {
+  color: var(--text-color);
+  text-shadow: 0 0 5px var(--text-color);
+}
+
+#home {
+  width: 100vw;
+  height: 125vh;
+  position: relative;
+  background-image: url("assets/bladerunner.jpg");
+  background-attachment: fix;
+  animation: movie 400s linear infinite;
+  mask-image: linear-gradient(black, black 75%, transparent);
+  background-attachment: fixed;
+}
+
+#home > :first-child {
+  position: absolute;
+  top: 50vh;
+  left: 50%;
+  translate: -50% -50%;
+  outline: rgba(255, 255, 255, 0.5) 3px solid;
+  padding: clamp(1rem, 3vw, 3rem);
+  border-radius: 10px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#home > :first-child p {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(3rem, 10vw, 10rem);
+  font-weight: 600;
+  font-family: "Roboto Mono", monospace;
+  letter-spacing: 1rem;
+  margin-right: -1rem;
+  width: fit-content;
+  text-shadow: 0 0 15px white;
+}
+
+@keyframes movie {
+  0% {
+    background-position: 0 0;
+  }
+  25% {
+    background-position: 100% 100%;
+  }
+  50% {
+    background-position: 0 100%;
+  }
+  75% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.film {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.05),
+    rgba(0, 110, 255, 0.05) 3px,
+    transparent 3px,
+    transparent 15px
+  );
+  background-size: auto 15px;
+  animation: downForever 20s linear infinite;
+}
+
+@keyframes downForever {
+  to {
+    background-position: 0 100%;
+  }
+}
+
+#about {
+  padding: 5rem 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#about > :first-child {
+  width: clamp(325px, 80vw, 1000px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5rem;
+  margin-bottom: 7.5rem;
+}
+
+#about > :first-child > :first-child {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectionHeader {
+  font-size: 3rem;
+  text-shadow: 0 0 15px white;
+  letter-spacing: 1rem;
+  margin-right: -1rem;
+}
+
+.sectionHeader:first-of-type {
+  margin: 3rem 0;
+}
+
+.highlight {
+  text-shadow: 0 0 15px white;
+}
+
+.softHighlight {
+  text-shadow: 0 0 5px white;
+}
+
+.centerText {
+  text-align: center;
+}
+
+#about > :first-child > :nth-child(2) {
+  width: 100%;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  height: clamp(3rem, 20vh, 20rem);
+  position: relative;
+  overflow: hidden;
+}
+
+#about > :first-child > :nth-child(2):hover > div {
+  animation-play-state: paused;
+}
+
+.sliderWrapper {
+  position: absolute;
+  display: flex;
+  height: 100%;
+  gap: 1rem;
+  will-change: transform;
+  padding-left: 1rem;
+}
+
+.sliderWrapper.startAnim {
+  animation: SlideIn 40s linear infinite;
+}
+
+#sliderWrapper1 {
+  animation-delay: -20s;
+}
+
+#sliderWrapper2 {
+  transform: translateX(100%);
+}
+
+@keyframes SlideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+#about .sliderItem {
+  height: 100%;
+  width: auto;
+  border-radius: 10px;
+}
+
+#highlights {
+  padding: 3rem 0;
+  width: clamp(325px, 90vw, 1200px);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  position: relative;
+}
+
+#highlights > div {
+  flex: 0 0 clamp(100px, 45%, 600px);
+  background-color: rgb(30, 30, 30);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 1px;
+}
+
+@media (width <= 700px) {
+  #highlights {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #highlights > div {
+    flex: 0 0 90%;
+    aspect-ratio: auto;
+  }
+}
+
+#highlights > div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.4),
+    transparent 40%
+  );
+  transition: opacity 0.5s ease;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+#highlights:hover > div::after {
+  opacity: 1;
+}
+
+#highlights > div::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.1),
+    transparent 40%
+  );
+  transition: opacity 0.5s ease;
+  border-radius: 10px;
+  z-index: 3;
+}
+
+#highlights > div:hover::before {
+  opacity: 1;
+}
+
+#highlights > div > div {
+  width: 100%;
+  background-color: black;
+  border-radius: 10px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#highlights > div > div > :first-child {
+  width: 100%;
+  aspect-ratio: 16/ 9;
+  background-size: 100%;
+  background-position: center;
+  box-sizing: border-box;
+  background-clip: content-box;
+  background-repeat: no-repeat;
+}
+
+#highlights > div > div > :nth-child(2) {
+  padding: 2rem;
+  background: linear-gradient(to bottom, rgb(20, 20, 20) 0%, transparent 100%);
+}
+
+#highlights > div > div > :nth-child(2) > :first-child {
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+#highlights > div > div > :nth-child(2) > :nth-child(2) {
+  margin-bottom: 2rem;
+}
