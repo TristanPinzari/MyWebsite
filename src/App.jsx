@@ -84,8 +84,8 @@ function App() {
       </div>
       <section id="home">
         <div>
-          <HackerText textContent={"TRISTAN"} />
-          <HackerText textContent={"PINZARI"} />
+          <HackerText className={"highlight"} textContent={"TRISTAN"} />
+          <HackerText className={"highlight"} textContent={"PINZARI"} />
           <div className="film" />
           <div />
         </div>
@@ -100,8 +100,12 @@ function App() {
               tools, including React, Node, Git, Firebase, Appwrite, Gemini,
               HTML, JavaScript, CSS, Java, and Python. I’m deeply interested in
               problem-solving through code, mathematics, and physics. I’m a fast
-              learner who thrives on new challenges and is always eager to grow.
-              Nonetheless, I am still your average energy-pumped undergrad!
+              learner who thrives on new challenges and is always eager to grow!
+              <br />
+              <br />I am currently in my first year of undergraduate studies at
+              Western University, majoring in Computer Science. I am pursuing an
+              Honours Specialization in Computer Science and plan to complete a
+              minor in Software Engineering.
             </p>
           </div>
           <div className="fadeIn">
@@ -127,7 +131,7 @@ function App() {
           Here are some of my highlights:
         </p>
         <div ref={highlightsRef} id="highlights" onMouseMove={HandleMouseMove}>
-          <div>
+          <div className="card">
             <div>
               <div
                 style={{
@@ -146,20 +150,23 @@ function App() {
                   In the summer of 2023, I worked at Headstarter as the Head
                   Developer in a three-person team. I led the team to
                   successfully complete all three full-stack projects we were
-                  assigned, demonstrating adaptability and resilience by quickly
-                  learning new technologies and delivering high-quality work
-                  under tight deadlines, even as a beginner.
+                  assigned, demonstrating strong team leadership, adaptability,
+                  and resilience by quickly learning new tools and languages and
+                  consistently delivering high-quality work under tight
+                  deadlines, even as a beginner.
                 </p>
               </div>
             </div>
           </div>
-          <div>
+          <div className="card">
             <div>
               <div
                 style={{
-                  backgroundImage: `url('src/assets/cloud9logo.png')`,
+                  backgroundImage: `url('src/assets/cloud9nobg.png')`,
                   backgroundSize: "80%",
-                  backgroundColor: "white",
+                  boxSizing: "border-box",
+                  border: "15px #085585ff solid",
+                  backgroundColor: "rgba(255, 255, 255, 0.95)",
                 }}
               />
               <div>
@@ -170,17 +177,17 @@ function App() {
                 </div>
                 <p>
                   In 11th grade, I completed my co-op term at Cloud9, an IT
-                  company, and was subsequently hired as a Junior IT Technician.
-                  During my time there, I worked with a variety of clients
-                  across Ontario, gaining hands-on experience in tasks such as
-                  network infrastructure planning, cabling and wiring, antenna
+                  company, and was later hired as a Junior IT Technician. During
+                  my two years there, I worked with a variety of clients across
+                  Ontario, gaining hands-on experience in tasks such as network
+                  infrastructure planning, cabling and wiring, antenna
                   installations, and other technical projects, which
-                  strengthened both my technical and problem-solving skills.
+                  strengthened my technical and problem-solving skills.
                 </p>
               </div>
             </div>
           </div>
-          <div>
+          <div className="card">
             <div>
               <div
                 style={{
@@ -203,31 +210,6 @@ function App() {
                   sponsorships and fostering community engagement. My work
                   helped support the overall quality, organization, and success
                   of both events.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div>
-              <div
-                style={{
-                  backgroundImage: `url('src/assets/western.jpg')`,
-                  backgroundColor: "rgb(79, 38, 131)",
-                }}
-              />
-              <div>
-                <div>
-                  <p className="softHighlight smallHeader centerText">
-                    FIRST-YEAR UNDERGRADUATE
-                  </p>
-                </div>
-                <p>
-                  I am currently a first-year undergraduate student at Western
-                  University in London, Ontario, majoring in Computer Science. I
-                  am pursuing an Honors Specialization in Computer Science with
-                  a minor in Software Engineering, focusing on developing strong
-                  software development skills while exploring artificial
-                  intelligence.
                 </p>
               </div>
             </div>

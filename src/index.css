@@ -1,13 +1,8 @@
 :root {
-  --text-color: white;
+  --text-color: rgba(255, 255, 255, 0.95);
+  --default-text: clamp(0.75rem, 2vw, 1rem);
   --dark-grey: rgb(20, 20, 20);
   --inactive: rgba(255, 255, 255, 0.5);
-  --shadow-s: inset 0 1px 2px #ffffff30, /* top highlight */ 0 1px 2px #00000030,
-    /* dark shadow */ 0 2px 4px #00000015; /* soft shadow */
-  --shadow-m: inset 0 1px 2px #ffffff50, /* top highlight */ 0 2px 4px #00000030,
-    /* dark shadow */ 0 4px 8px #00000015; /* soft shadow */
-  --shadow-l: inset 0 1px 2px #ffffff70, /* top highlight */ 0 4px 6px #00000030,
-    /* dark shadow */ 0 6px 10px #00000015; /* soft shadow */
 }
 
 * {
@@ -40,12 +35,12 @@ a {
 }
 
 p {
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  letter-spacing: 0.1rem;
+  font-size: var(--default-text);
+  line-height: calc(150% - 150% * (1 - clamp(1rem, 2%, 1.5rem) / 16px));
 }
 
 .smallHeader {
-  font-size: clamp(1.25rem, 2vw, 2rem);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
 }
 
 ::-webkit-scrollbar {
@@ -134,6 +129,14 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.highlight {
+  text-shadow: 0 0 15px white;
+}
+
+.softHighlight {
+  text-shadow: 0 0 2.5px white;
+}
+
 #home > :first-child p {
   position: relative;
   z-index: 2;
@@ -143,7 +146,7 @@ body {
   letter-spacing: 1rem;
   margin-right: -1rem;
   width: fit-content;
-  text-shadow: 0 0 15px white;
+  line-height: normal;
 }
 
 @keyframes movie {
@@ -212,23 +215,19 @@ body {
   align-items: center;
 }
 
+#about > :first-child > :first-child > :nth-child(2) {
+  width: 80%;
+}
+
 .sectionHeader {
-  font-size: 3rem;
+  font-size: 2.75rem;
   text-shadow: 0 0 15px white;
   letter-spacing: 1rem;
   margin-right: -1rem;
 }
 
 .sectionHeader:first-of-type {
-  margin: 3rem 0;
-}
-
-.highlight {
-  text-shadow: 0 0 15px white;
-}
-
-.softHighlight {
-  text-shadow: 0 0 5px white;
+  margin: 2rem 0 3rem 0;
 }
 
 .centerText {
@@ -291,21 +290,18 @@ body {
 
 #highlights {
   padding: 3rem 0;
-  width: clamp(325px, 90vw, 1200px);
+  width: clamp(325px, 90vw, 1300px);
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   position: relative;
 }
 
-#highlights > div {
-  flex: 0 0 clamp(100px, 45%, 600px);
+.card {
   background-color: rgb(30, 30, 30);
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  position: relative;
   padding: 1px;
+  border-radius: 10px;
+  position: relative;
 }
 
 @media (width <= 700px) {
@@ -314,20 +310,16 @@ body {
   }
   #highlights > div {
     flex: 0 0 90%;
-    aspect-ratio: auto;
   }
 }
 
-#highlights > div::after {
+.card::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   opacity: 0;
   background: radial-gradient(
-    600px circle at var(--mouse-x) var(--mouse-y),
+    800px circle at var(--mouse-x) var(--mouse-y),
     rgba(255, 255, 255, 0.4),
     transparent 40%
   );
@@ -336,11 +328,11 @@ body {
   z-index: 1;
 }
 
-#highlights:hover > div::after {
+#highlights:hover .card::after {
   opacity: 1;
 }
 
-#highlights > div::before {
+.card::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -348,7 +340,7 @@ body {
   opacity: 0;
   background: radial-gradient(
     800px circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05),
     transparent 40%
   );
   transition: opacity 0.5s ease;
@@ -356,12 +348,14 @@ body {
   z-index: 3;
 }
 
-#highlights > div:hover::before {
+.card:hover::before {
   opacity: 1;
 }
 
-#highlights > div > div {
+.card > div {
+  position: relative;
   width: 100%;
+  height: stretch;
   background-color: black;
   border-radius: 10px;
   z-index: 2;
@@ -370,7 +364,7 @@ body {
   overflow: hidden;
 }
 
-#highlights > div > div > :first-child {
+.card > div > :first-child {
   width: 100%;
   aspect-ratio: 16/ 9;
   background-size: 100%;
@@ -380,19 +374,18 @@ body {
   background-repeat: no-repeat;
 }
 
-#highlights > div > div > :nth-child(2) {
+.card > div > :nth-child(2) {
   padding: 2rem;
   background: linear-gradient(to bottom, rgb(20, 20, 20) 0%, transparent 100%);
+  height: stretch;
+  display: flex;
+  flex-direction: column;
 }
 
-#highlights > div > div > :nth-child(2) > :first-child {
-  height: 15%;
+.card > div > :nth-child(2) > :first-child {
+  height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1.25rem;
-}
-
-#highlights > div > div > :nth-child(2) > :nth-child(2) {
-  margin-bottom: 2rem;
 }

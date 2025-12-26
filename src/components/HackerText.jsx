@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-function HackerText({ textContent }) {
+function HackerText({ textContent, className }) {
   const textRef = useRef(null);
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -72,7 +72,11 @@ function HackerText({ textContent }) {
     };
   }, [textContent]);
 
-  return <p ref={textRef}>{textContent}</p>;
+  return (
+    <p className={className} ref={textRef}>
+      {textContent}
+    </p>
+  );
 }
 
 export default HackerText;
