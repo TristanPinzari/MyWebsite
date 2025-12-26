@@ -110,10 +110,10 @@ body {
   height: 125vh;
   position: relative;
   background-image: url("assets/bladerunner.jpg");
-  background-attachment: fixed;
   animation: movie 400s linear infinite;
   mask-image: linear-gradient(black, black 75%, transparent);
   background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 #home > :first-child {
@@ -127,6 +127,25 @@ body {
   overflow: hidden;
   backdrop-filter: blur(10px);
   background-color: rgba(0, 0, 0, 0.5);
+  background-size: cover;
+}
+
+@keyframes movie {
+  0% {
+    background-position: 0 0;
+  }
+  25% {
+    background-position: 100% 100%;
+  }
+  50% {
+    background-position: 0 100%;
+  }
+  75% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 .highlight {
@@ -147,24 +166,6 @@ body {
   margin-right: -1rem;
   width: fit-content;
   line-height: normal;
-}
-
-@keyframes movie {
-  0% {
-    background-position: 0 0;
-  }
-  25% {
-    background-position: 100% 100%;
-  }
-  50% {
-    background-position: 0 100%;
-  }
-  75% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
 }
 
 .film {
