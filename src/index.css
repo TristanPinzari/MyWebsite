@@ -1,6 +1,6 @@
 :root {
   --text-color: rgba(255, 255, 255, 0.95);
-  --default-text: clamp(0.75rem, 2vw, 1rem);
+  --default-text: clamp(0.9rem, 2vw, 1.15rem);
   --dark-grey: rgb(20, 20, 20);
   --inactive: rgba(255, 255, 255, 0.5);
 }

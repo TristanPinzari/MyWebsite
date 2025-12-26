@@ -131,7 +131,7 @@ function App() {
           Here are some of my highlights:
         </p>
         <div ref={highlightsRef} id="highlights" onMouseMove={HandleMouseMove}>
-          <div className="card">
+          <div className="card fadeIn">
             <div>
               <div
                 style={{
@@ -158,7 +158,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="card">
+          <div className="card fadeIn">
             <div>
               <div
                 style={{
@@ -187,7 +187,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="card">
+          <div className="card fadeIn">
             <div>
               <div
                 style={{
