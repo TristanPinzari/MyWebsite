@@ -132,19 +132,19 @@ body {
 
 @keyframes movie {
   0% {
-    background-position: 0 0;
+    background-position: left top;
   }
   25% {
-    background-position: 100% 100%;
+    background-position: right bottom;
   }
   50% {
-    background-position: 0 100%;
+    background-position: left bottom;
   }
   75% {
-    background-position: 100% 0;
+    background-position: right top;
   }
   100% {
-    background-position: 0 0;
+    background-position: left top;
   }
 }
 
@@ -308,9 +308,6 @@ body {
 @media (width <= 700px) {
   #highlights {
     grid-template-columns: repeat(1, 1fr);
-  }
-  #highlights > div {
-    flex: 0 0 90%;
   }
 }
 
