@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import * as images from "./assets";
 
 import HackerText from "./components/HackerText";
 
@@ -110,32 +111,32 @@ function App() {
           </div>
           <div className="fadeIn">
             <div className="sliderWrapper" id="sliderWrapper1">
-              <img className="sliderItem" src="src/assets/party.jpg" />
-              <img className="sliderItem" src="src/assets/crazy_party.jpg" />
-              <img className="sliderItem" src="src/assets/suits.jpg" />
-              <img className="sliderItem" src="src/assets/christmas.jpg" />
-              <img className="sliderItem" src="src/assets/shopping.jpg" />
-              <img className="sliderItem" src="src/assets/viking.jpg" />
+              <img className="sliderItem" src={images.party} />
+              <img className="sliderItem" src={images.crazyParty} />
+              <img className="sliderItem" src={images.suits} />
+              <img className="sliderItem" src={images.christmas} />
+              <img className="sliderItem" src={images.shopping} />
+              <img className="sliderItem" src={images.viking} />
             </div>
             <div className="sliderWrapper" id="sliderWrapper2">
-              <img className="sliderItem" src="src/assets/party.jpg" />
-              <img className="sliderItem" src="src/assets/crazy_party.jpg" />
-              <img className="sliderItem" src="src/assets/suits.jpg" />
-              <img className="sliderItem" src="src/assets/christmas.jpg" />
-              <img className="sliderItem" src="src/assets/shopping.jpg" />
-              <img className="sliderItem" src="src/assets/viking.jpg" />
+              <img className="sliderItem" src={images.party} />
+              <img className="sliderItem" src={images.crazyParty} />
+              <img className="sliderItem" src={images.suits} />
+              <img className="sliderItem" src={images.christmas} />
+              <img className="sliderItem" src={images.shopping} />
+              <img className="sliderItem" src={images.viking} />
             </div>
           </div>
         </div>
         <p className="softHighlight centerText fadeIn">
-          Here are some of my highlights:
+          Here are some of my highlights
         </p>
         <div ref={highlightsRef} id="highlights" onMouseMove={HandleMouseMove}>
           <div className="card fadeIn">
             <div>
               <div
                 style={{
-                  backgroundImage: `url('src/assets/headstarter.png')`,
+                  backgroundImage: `url(${images.headstarter})`,
                   backgroundColor: "rgb(5, 8, 18)",
                   backgroundSize: "125%",
                 }}
@@ -162,7 +163,7 @@ function App() {
             <div>
               <div
                 style={{
-                  backgroundImage: `url('src/assets/cloud9nobg.png')`,
+                  backgroundImage: `url(${images.cloud9})`,
                   backgroundSize: "80%",
                   boxSizing: "border-box",
                   border: "15px #085585ff solid",
@@ -191,7 +192,7 @@ function App() {
             <div>
               <div
                 style={{
-                  backgroundImage: `url('src/assets/yrhacks.png')`,
+                  backgroundImage: `url(${images.yrhacks})`,
                   backgroundColor: "rgb(6, 4, 41)",
                   backgroundSize: "40%",
                 }}

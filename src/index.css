@@ -110,7 +110,7 @@ body {
   height: 125vh;
   position: relative;
   background-image: url("assets/bladerunner.jpg");
-  background-attachment: fix;
+  background-attachment: fixed;
   animation: movie 400s linear infinite;
   mask-image: linear-gradient(black, black 75%, transparent);
   background-attachment: fixed;
