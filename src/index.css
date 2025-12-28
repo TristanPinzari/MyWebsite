@@ -53,9 +53,9 @@ p {
 }
 
 body {
-  overflow-x: hidden;
   background-color: black;
   padding-bottom: 5rem;
+  overflow-x: hidden;
 }
 
 #navBar {
@@ -110,10 +110,12 @@ body {
   height: 125vh;
   position: relative;
   background-image: url("assets/bladerunner.jpg");
-  animation: movie 400s linear infinite;
+  /* animation: movie 400s linear infinite; */
+  background-size: cover;
   mask-image: linear-gradient(black, black 75%, transparent);
   background-attachment: fixed;
   background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 #home > :first-child {
@@ -129,7 +131,7 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-@keyframes movie {
+/* @keyframes movie {
   0% {
     background-position: left top;
   }
@@ -145,15 +147,15 @@ body {
   100% {
     background-position: left top;
   }
-}
+} */
 
 .highlight {
   text-shadow: 0 0 15px white;
 }
-
+/* 
 .softHighlight {
-  text-shadow: 0 0 2.5px white;
-}
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.25);
+} */
 
 #home > :first-child p {
   position: relative;
@@ -192,11 +194,11 @@ body {
 }
 
 #about {
-  padding: 5rem 0;
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 4rem 0;
 }
 
 #about > :first-child {
@@ -220,14 +222,11 @@ body {
 }
 
 .sectionHeader {
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   text-shadow: 0 0 15px white;
   letter-spacing: 1rem;
   margin-right: -1rem;
-}
-
-.sectionHeader:first-of-type {
-  margin: 2rem 0 3rem 0;
+  margin-bottom: 3rem;
 }
 
 .centerText {
@@ -324,6 +323,7 @@ body {
   transition: opacity 0.5s ease;
   border-radius: 10px;
   z-index: 1;
+  pointer-events: none;
 }
 
 #highlights:hover .card::after {
@@ -344,6 +344,7 @@ body {
   transition: opacity 0.5s ease;
   border-radius: 10px;
   z-index: 3;
+  pointer-events: none;
 }
 
 .card:hover::before {
@@ -355,13 +356,16 @@ body {
   background-color: black;
   border-radius: 10px;
   z-index: 2;
+  overflow: hidden;
+}
+
+#highlights .card > div {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   height: stretch;
 }
 
-.card > div > :first-child {
+#highlights .card > div > :first-child {
   width: 100%;
   aspect-ratio: 16/ 9;
   background-size: 100%;
@@ -371,17 +375,130 @@ body {
   background-repeat: no-repeat;
 }
 
-.card > div > :nth-child(2) {
+#highlights .card > div > :nth-child(2) {
   padding: 2rem;
-  background: linear-gradient(to bottom, rgb(20, 20, 20) 0%, transparent 100%);
+  background: rgb(15, 15, 15);
   display: flex;
   flex-direction: column;
 }
 
-.card > div > :nth-child(2) > :first-child {
+.cardHeader {
   height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1.25rem;
+}
+
+#projects {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+#projects > :first-child {
+  margin-bottom: 3rem;
+}
+
+#projectsWrapper {
+  width: clamp(325px, 90vw, 1200px);
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+
+  gap: 1rem;
+  position: relative;
+}
+
+@media (width <= 1250px) {
+  #projectsWrapper {
+    width: clamp(325px, 90vw, 750px);
+  }
+}
+
+#projectsWrapper:hover .card::after {
+  opacity: 1;
+}
+
+#projectsWrapper .card {
+}
+
+#projectsWrapper .card > div {
+  display: flex;
+}
+
+@media (width <= 1250px) {
+  #projectsWrapper {
+    width: clamp(325px, 90vw, 750px);
+  }
+  #projectsWrapper .card > div {
+    flex-direction: column;
+  }
+  .ImageSlider {
+    padding-bottom: calc(8px + 1rem);
+  }
+}
+
+#projectsWrapper .card > div > * {
+  flex: 1 1;
+  min-width: 0;
+  background: rgb(15, 15, 15);
+}
+
+#projectsWrapper .cardContent > :first-child {
+  padding: 2rem;
+}
+
+#projectsWrapper .cardContent > :nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+.ImageSlider {
+  flex: 1;
+  position: relative;
+}
+
+.ImageSlider > :first-child {
+  overflow: hidden;
+  border-radius: 10px;
+  aspect-ratio: 16/9;
+  width: 100%;
+  display: flex;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.ImageSlider :first-child img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+  scroll-snap-align: start;
+}
+
+.ImageSlider > :nth-child(2) {
+  left: 50%;
+  translate: -50%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.ImageSlider > :nth-child(2) > a {
+  aspect-ratio: 1;
+  background-color: rgba(255, 255, 255);
+  opacity: 0.5;
+  width: 8px;
+  border-radius: 50%;
+}
+
+.ImageSlider > :nth-child(2) > a:hover,
+.ImageSlider > :nth-child(2) > a.active {
+  opacity: 1;
 }

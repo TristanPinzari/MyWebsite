@@ -1,25 +1,32 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import * as images from "./assets";
 
 import HackerText from "./components/HackerText";
+import ImageSlider from "./components/ImageSlider";
 
 function App() {
   const [activeSection, setActiveSection] = useState("home");
-  const highlightsRef = useRef(null);
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.6 }
-    );
-    sections.forEach((section) => observer.observe(section));
+    function updateActiveSection() {
+      let maxVisible = 0;
+      let mostVisibleId = activeSection;
+      for (const section of sections) {
+        const rect = section.getBoundingClientRect();
+        const visiblePixels = Math.max(
+          0,
+          Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0)
+        );
+        if (visiblePixels > maxVisible) {
+          maxVisible = visiblePixels;
+          mostVisibleId = section.id;
+        }
+      }
+      setActiveSection(mostVisibleId);
+    }
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    updateActiveSection();
 
     const navBar = document.getElementById("navBar");
     function navScroll() {
@@ -32,13 +39,14 @@ function App() {
     }
 
     return () => {
-      observer.disconnect();
+      window.removeEventListener("scroll", updateActiveSection);
       window.removeEventListener("scroll", navScroll);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function HandleMouseMove(e) {
-    for (const element of highlightsRef.current.children) {
+    for (const element of e.currentTarget.children) {
       const rect = element.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
@@ -50,7 +58,7 @@ function App() {
   function scrollTo(id) {
     const element = document.getElementById(id);
     window.scrollTo({
-      top: element.offsetTop,
+      top: id == "home" ? 0 : element.offsetTop - 100,
       behavior: "smooth",
     });
   }
@@ -66,13 +74,13 @@ function App() {
         </button>
         <button
           className={activeSection === "about" ? "active" : ""}
-          onClick={() => scrollTo("about")}
+          onClick={() => scrollTo("aboutHeader")}
         >
           ABOUT
         </button>
         <button
           className={activeSection === "projects" ? "active" : ""}
-          onClick={() => scrollTo("projects")}
+          onClick={() => scrollTo("projectsHeader")}
         >
           PROJECTS
         </button>
@@ -94,7 +102,9 @@ function App() {
       <section id="about">
         <div>
           <div>
-            <p className="sectionHeader fadeIn">ABOUT</p>
+            <p id="aboutHeader" className="sectionHeader fadeIn">
+              ABOUT
+            </p>
             <p className="fadeIn centerText">
               Hello, my name is Tristan Pinzari, and I am a full-stack
               developer. I have experience with a wide range of languages and
@@ -128,10 +138,8 @@ function App() {
             </div>
           </div>
         </div>
-        <p className="softHighlight centerText fadeIn">
-          Here are some of my highlights
-        </p>
-        <div ref={highlightsRef} id="highlights" onMouseMove={HandleMouseMove}>
+        <p className="centerText fadeIn">Here are some of my highlights:</p>
+        <div id="highlights" onMouseMove={HandleMouseMove}>
           <div className="card fadeIn">
             <div>
               <div
@@ -143,7 +151,7 @@ function App() {
               />
               <div>
                 <div>
-                  <p className="softHighlight smallHeader centerText">
+                  <p className="smallHeader centerText cardHeader">
                     SOFTWARE ENGINEERING FELLOW
                   </p>
                 </div>
@@ -172,7 +180,7 @@ function App() {
               />
               <div>
                 <div>
-                  <p className="softHighlight smallHeader centerText">
+                  <p className="smallHeader centerText cardHeader">
                     JUNIOR IT TECHNICIAN
                   </p>
                 </div>
@@ -199,7 +207,7 @@ function App() {
               />
               <div>
                 <div>
-                  <p className="softHighlight smallHeader centerText">
+                  <p className="smallHeader centerText cardHeader">
                     LOGISTICS & OUTREACH EXECUTIVE
                   </p>
                 </div>
@@ -217,7 +225,42 @@ function App() {
           </div>
         </div>
       </section>
-      <section id="projects"></section>
+      <section id="projects">
+        <p id="projectsHeader" className="sectionHeader fadeIn centerText">
+          PROJECTS
+        </p>
+        <div id="projectsWrapper" onMouseMove={HandleMouseMove}>
+          <div className="card">
+            <div className="cardContent">
+              <div>
+                <p className="smallHeader centerText cardHeader">
+                  RESUME PARSER
+                </p>
+                <p>
+                  This project was a resume parser that allowed users to upload
+                  resumes and search through all uploaded resumes using keywords
+                  to identify candidates. It was also my first project at
+                  Headstarter and my first experience working as a full-stack
+                  developer, exposing me to HTML, CSS, JavaScript, and Firebase
+                  for the first time. Although it was technically the simplest
+                  project I have worked on, it proved to be the most
+                  challenging, as I had to quickly learn these technologies,
+                  work with databases, and lead other developers—all within a
+                  one-week deadline. It is especially memorable because of all
+                  the all-nighters I pulled, as well as the excitement of
+                  completing my first fully operational project.
+                </p>
+              </div>
+              <div>
+                <ImageSlider
+                  id="imageSlider1"
+                  images={[images.resume3, images.resume1, images.resume2]}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section id="contact"></section>
     </>
   );
