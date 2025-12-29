@@ -134,7 +134,6 @@ function App() {
           <div className="fadeIn">
             <div className="sliderWrapper" id="sliderWrapper1">
               <img className="sliderItem" src={images.party} />
-              <img className="sliderItem" src={images.crazyParty} />
               <img className="sliderItem" src={images.suits} />
               <img className="sliderItem" src={images.christmas} />
               <img className="sliderItem" src={images.shopping} />
@@ -142,7 +141,6 @@ function App() {
             </div>
             <div className="sliderWrapper" id="sliderWrapper2">
               <img className="sliderItem" src={images.party} />
-              <img className="sliderItem" src={images.crazyParty} />
               <img className="sliderItem" src={images.suits} />
               <img className="sliderItem" src={images.christmas} />
               <img className="sliderItem" src={images.shopping} />
@@ -242,7 +240,7 @@ function App() {
           PROJECTS
         </p>
         <div id="projectsWrapper" onMouseMove={HandleMouseMove}>
-          <div className="card">
+          <div className="card fadeIn">
             <div className="cardContent">
               <div>
                 <p className="smallHeader centerText cardHeader">NOTIFY</p>
@@ -273,12 +271,12 @@ function App() {
               <div>
                 <ImageSlider
                   id="imageSlider1"
-                  images={[images.resume3, images.resume1, images.resume2]}
+                  images={[images.notify1, images.notify2, images.notify3]}
                 />
               </div>
             </div>
           </div>
-          <div className="card">
+          <div className="card fadeIn">
             <div className="cardContent">
               <div>
                 <p className="smallHeader centerText cardHeader">
@@ -304,12 +302,12 @@ function App() {
               <div>
                 <ImageSlider
                   id="imageSlider2"
-                  images={[images.resume3, images.resume1, images.resume2]}
+                  images={[images.weather1, images.weather2]}
                 />
               </div>
             </div>
           </div>
-          <div className="card">
+          <div className="card fadeIn">
             <div className="cardContent">
               <div>
                 <p className="smallHeader centerText cardHeader">
@@ -344,11 +342,11 @@ function App() {
             </div>
           </div>
 
-          <div className="card">
+          <div className="card fadeIn">
             <div className="cardContent">
               <div>
                 <p className="smallHeader centerText cardHeader">
-                  The City Revival
+                  THE CITY REVIVAL
                 </p>
                 <p>
                   For a summer of high school, I was invited to be the head
@@ -387,7 +385,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="card">
+          <div className="card fadeIn">
             <div className="cardContent">
               <div>
                 <p className="smallHeader centerText cardHeader">BOHNANZA</p>
@@ -408,12 +406,12 @@ function App() {
               <div>
                 <ImageSlider
                   id="imageSlider5"
-                  images={[images.resume3, images.resume1, images.resume2]}
+                  images={[images.boh1, images.boh2, images.boh3]}
                 />
               </div>
             </div>
           </div>
-          <div className="card">
+          <div className="card fadeIn">
             <div className="cardContent">
               <div>
                 <p className="smallHeader centerText cardHeader">PAC-MAN</p>
@@ -430,7 +428,7 @@ function App() {
               <div>
                 <ImageSlider
                   id="imageSlider6"
-                  images={[images.resume3, images.resume1, images.resume2]}
+                  images={[images.pacman1, images.pacman2, images.pacman3]}
                 />
               </div>
             </div>
