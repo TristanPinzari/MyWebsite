@@ -3,6 +3,7 @@
   --default-text: clamp(0.9rem, 2vw, 1.15rem);
   --dark-grey: rgb(20, 20, 20);
   --inactive: rgba(255, 255, 255, 0.5);
+  --shadow-m: inset 0 2px 4px #00000030, 0 4px 8px #00000015;
 }
 
 * {
@@ -116,6 +117,16 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+}
+
+#home[data-isIOS="true"] {
+  background-attachment: scroll;
+}
+
+@supports (-webkit-touch-callout: none) {
+  #home {
+    background-attachment: scroll;
+  }
 }
 
 #home > :first-child {
@@ -406,7 +417,6 @@ body {
   width: clamp(325px, 90vw, 1200px);
   display: grid;
   grid-template-rows: repeat(3, 1fr);
-
   gap: 1rem;
   position: relative;
 }
@@ -421,13 +431,6 @@ body {
   opacity: 1;
 }
 
-#projectsWrapper .card {
-}
-
-#projectsWrapper .card > div {
-  display: flex;
-}
-
 @media (width <= 1250px) {
   #projectsWrapper {
     width: clamp(325px, 90vw, 750px);
@@ -440,14 +443,16 @@ body {
   }
 }
 
-#projectsWrapper .card > div > * {
+#projectsWrapper .cardContent > * {
   flex: 1 1;
-  min-width: 0;
-  background: rgb(15, 15, 15);
 }
 
-#projectsWrapper .cardContent > :first-child {
+#projectsWrapper .cardContent {
+  box-sizing: border-box;
   padding: 2rem;
+  background: rgb(15, 15, 15);
+  display: flex;
+  gap: 2rem;
 }
 
 #projectsWrapper .cardContent > :nth-child(2) {
@@ -455,12 +460,13 @@ body {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  padding: 2rem;
 }
 
 .ImageSlider {
   flex: 1;
   position: relative;
+  box-shadow: var(--shadow-m);
+  border-radius: 10px;
 }
 
 .ImageSlider > :first-child {
