@@ -1,13 +1,25 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import * as images from "./assets";
 
 import HackerText from "./components/HackerText";
 import ImageSlider from "./components/ImageSlider";
 
 function App() {
+  const homeRef = useRef(null);
   const [activeSection, setActiveSection] = useState("home");
-
   useEffect(() => {
+    if (homeRef.current) {
+      if (
+        navigator.platform === "iPad" ||
+        navigator.platform === "iPhone" ||
+        navigator.platform === "iPod"
+      ) {
+        homeRef.current.setAttribute("--data-isIOS", true);
+      } else {
+        homeRef.current.setAttribute("--data-isIOS", false);
+      }
+    }
+
     const sections = document.querySelectorAll("section");
     function updateActiveSection() {
       let maxVisible = 0;
@@ -91,7 +103,7 @@ function App() {
           CONTACT
         </button>
       </div>
-      <section id="home">
+      <section ref={homeRef} id="home">
         <div>
           <HackerText className={"highlight"} textContent={"TRISTAN"} />
           <HackerText className={"highlight"} textContent={"PINZARI"} />
