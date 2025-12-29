@@ -373,7 +373,6 @@ body {
 #highlights .card > div {
   display: flex;
   flex-direction: column;
-  height: stretch;
 }
 
 #highlights .card > div > :first-child {
@@ -422,29 +421,8 @@ body {
   position: relative;
 }
 
-@media (width <= 1250px) {
-  #projectsWrapper {
-    width: clamp(325px, 90vw, 750px);
-  }
-}
-
 #projectsWrapper:hover .card::after {
   opacity: 1;
-}
-
-@media (width <= 1250px) {
-  #projectsWrapper {
-    width: clamp(325px, 90vw, 750px);
-  }
-  #projectsWrapper .card > div {
-    flex-direction: column;
-  }
-  #projectsWrapper .cardContent > :first-child > :nth-child(2) {
-    max-height: none;
-  }
-  .ImageSlider {
-    padding-bottom: calc(8px + 1rem);
-  }
 }
 
 #projectsWrapper .cardContent > * {
@@ -457,7 +435,6 @@ body {
   background: rgb(15, 15, 15);
   display: flex;
   gap: 2rem;
-  height: stretch;
 }
 
 #projectsWrapper .cardContent > :first-child {
@@ -470,15 +447,8 @@ body {
 #projectsWrapper .cardContent > :first-child > :nth-child(2) {
   max-height: 360px;
   overflow-y: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0 2rem;
   box-sizing: border-box;
-}
-
-@media (width <= 1250px) {
-  #projectsWrapper .cardContent > :first-child > :nth-child(2) {
-    max-height: none;
-  }
 }
 
 #projectsWrapper
@@ -546,4 +516,20 @@ body {
 #imageSlider6 img {
   background-color: rgba(255, 255, 0, 0.25);
   object-fit: contain;
+}
+
+@media (width <= 1250px) {
+  #projectsWrapper {
+    width: clamp(325px, 90vw, 750px);
+  }
+  #projectsWrapper .cardContent > :first-child > :nth-child(2) {
+    max-height: none;
+    padding: 0;
+  }
+  #projectsWrapper .card > div {
+    flex-direction: column;
+  }
+  .ImageSlider {
+    padding-bottom: calc(8px + 1rem);
+  }
 }
