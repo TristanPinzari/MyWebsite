@@ -14,9 +14,9 @@ function App() {
         navigator.platform === "iPhone" ||
         navigator.platform === "iPod"
       ) {
-        homeRef.current.setAttribute("--data-isIOS", true);
+        homeRef.current.setAttribute("data-is-ios", true);
       } else {
-        homeRef.current.setAttribute("--data-isIOS", false);
+        homeRef.current.setAttribute("data-is-ios", false);
       }
     }
 
@@ -245,27 +245,191 @@ function App() {
           <div className="card">
             <div className="cardContent">
               <div>
-                <p className="smallHeader centerText cardHeader">
-                  RESUME PARSER
-                </p>
+                <p className="smallHeader centerText cardHeader">NOTIFY</p>
                 <p>
-                  This project was a resume parser that allowed users to upload
-                  resumes and search through all uploaded resumes using keywords
-                  to identify candidates. It was also my first project at
-                  Headstarter and my first experience working as a full-stack
-                  developer, exposing me to HTML, CSS, JavaScript, and Firebase
-                  for the first time. Although it was technically the simplest
-                  project I have worked on, it proved to be the most
-                  challenging, as I had to quickly learn these technologies,
-                  work with databases, and lead other developers—all within a
-                  one-week deadline. It is especially memorable because of all
-                  the all-nighters I pulled, as well as the excitement of
-                  completing my first fully operational project.
+                  This is my most recent project, built to help students
+                  collaborate more effectively within their courses. I designed
+                  it so users can create courses with unique join codes and
+                  role-based permissions, similar to Google Classroom, where
+                  they can organize shared notes by topic.
+                  <br />
+                  <br />
+                  The core feature uses Gemini AI to analyze uploaded notes and
+                  generate a single master document, with optional features such
+                  as spell, grammar, and fact checks. I intentionally designed
+                  the AI's influence to be scalable as to address concerns
+                  around academic dishonesty; it produces results comparable to
+                  what a student could create independently, just much more
+                  easily and faster.
+                  <br />
+                  <br />
+                  Targeted at university students, the platform is localized to
+                  individual classes rather than acting as a large public
+                  database, ensuring that students focus completely on course
+                  content. This was my first project using React, Appwrite, and
+                  FireAuth, and I’m excited to keep expanding this prototype.
                 </p>
               </div>
               <div>
                 <ImageSlider
                   id="imageSlider1"
+                  images={[images.resume3, images.resume1, images.resume2]}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="card">
+            <div className="cardContent">
+              <div>
+                <p className="smallHeader centerText cardHeader">
+                  WEATHER AGGREGATOR
+                </p>
+                <p>
+                  This was my second project at Headstarter, created in response
+                  to the East Coast of the United States being engulfed in smoke
+                  due to Canadian wildfires. The goal of the project was to
+                  display real-time weather data, safety alerts, and relevant
+                  news for any selected city.
+                  <br />
+                  <br />
+                  The application was built using HTML, CSS, JavaScript,
+                  OpenWeather, and NewsAPI, and it significantly strengthened my
+                  frontend development skills, data interpretation, and overall
+                  experience working with APIs. Out of all the weather
+                  aggregators presented, our project received the “Best Demo”
+                  award at Headstarter—an especially rewarding milestone for a
+                  team of beginners.
+                </p>
+              </div>
+              <div>
+                <ImageSlider
+                  id="imageSlider2"
+                  images={[images.resume3, images.resume1, images.resume2]}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="card">
+            <div className="cardContent">
+              <div>
+                <p className="smallHeader centerText cardHeader">
+                  RESUME PARSER
+                </p>
+                <p>
+                  This project was a resume parser that allowed users to upload
+                  resumes and search through them using keywords to identify the
+                  best candidates. It was my very first project at Headstarter
+                  and my first real experience working as a full-stack
+                  developer, which exposed me to HTML, CSS, JavaScript, and
+                  Firebase all at once. Although it was technically the simplest
+                  project I’ve worked on, it proved to be the most challenging
+                  because I had to learn these technologies, manage databases,
+                  and lead a team of developers—all within a strict one-week
+                  deadline.
+                  <br />
+                  <br />
+                  It’s especially memorable to me because of the all-nighters I
+                  pulled to get everything perfect, as well as the genuine
+                  excitement of completing my first fully operational project. I
+                  learned more in that one week about rapid development and
+                  leadership than almost any other project since.
+                </p>
+              </div>
+              <div>
+                <ImageSlider
+                  id="imageSlider3"
+                  images={[images.resume3, images.resume1, images.resume2]}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <div className="cardContent">
+              <div>
+                <p className="smallHeader centerText cardHeader">
+                  The City Revival
+                </p>
+                <p>
+                  For a summer of high school, I was invited to be the head
+                  developer for a community game called "The City Revival" on
+                  Roblox. While people sometimes overlook Roblox, the Studio
+                  served as an incredible introduction to programming in 3D
+                  environments, where I had to apply physics, calculus, and
+                  vectors to every system.
+                  <br />
+                  <br />I moved beyond just UI and graphics to building complex
+                  systems and physics entities such as vehicles, firearms,
+                  custom animations, gamemodes, an economy, and much much more.
+                  Because the game grew to include thousands of scripts and
+                  hundreds of thousands of assets, it was also my greatest
+                  teacher of modular programming; I had to keep everything
+                  strictly organized to ensure the game stayed efficient for our
+                  player base. Overall, it helped me become very comfortable
+                  with working in 3D environments.
+                  <br />
+                  <br />
+                  The project was a huge success, hosting large-scale events
+                  with hundreds of active players, and I’m glad to say the game
+                  is still beloved and operational today.
+                </p>
+              </div>
+              <div>
+                <ImageSlider
+                  id="imageSlider4"
+                  images={[
+                    images.city1,
+                    images.city2,
+                    images.city3,
+                    images.city4,
+                  ]}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="card">
+            <div className="cardContent">
+              <div>
+                <p className="smallHeader centerText cardHeader">BOHNANZA</p>
+                <p>
+                  This project was a recreation of Bohnanza, a German-style card
+                  game centered on trading, negotiation, and strategic
+                  decision-making. It was designed to closely simulate the
+                  physical card game through interactive features such as
+                  visible decks of draggable cards that can be planted or
+                  discarded depending on where the player drops them. The game
+                  includes a realistic turn-taking and deck management system,
+                  along with a comprehensive AI opponent that makes decisions
+                  based on the player’s hand, its hand, and the remaining cards
+                  left. The project was made with Java and Java Swing and was a
+                  real test for my object-oriented programming skills.
+                </p>
+              </div>
+              <div>
+                <ImageSlider
+                  id="imageSlider5"
+                  images={[images.resume3, images.resume1, images.resume2]}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="card">
+            <div className="cardContent">
+              <div>
+                <p className="smallHeader centerText cardHeader">PAC-MAN</p>
+                <p>
+                  This was a high school assignment where we had to recreate
+                  Pac-Man using Java but with a list of additional features. My
+                  design incorporated the full list of features, such as custom
+                  power-ups, player map building, custom themes, etc. The key
+                  feature that separated my design from my peers was my
+                  pathfinding algorithm, which made the game incredibly
+                  difficult as you progressed through levels.
+                </p>
+              </div>
+              <div>
+                <ImageSlider
+                  id="imageSlider6"
                   images={[images.resume3, images.resume1, images.resume2]}
                 />
               </div>
