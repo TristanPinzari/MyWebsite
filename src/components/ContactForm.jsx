@@ -23,10 +23,8 @@ export default function ContactForm() {
   };
 
   return (
-    <form id="contactForm" onSubmit={onSubmit}>
-      <p id="projectsHeader" className="fadeIn centerText">
-        {result}
-      </p>
+    <form id="contactForm" onSubmit={onSubmit} className="fadeIn">
+      <p className="centerText">{result}</p>
       <input type="text" name="name" placeholder="NAME" required />
       <input type="email" name="email" required placeholder="EMAIL" />
       <textarea name="message" placeholder="MESSAGE" required></textarea>

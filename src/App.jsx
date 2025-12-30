@@ -349,7 +349,6 @@ function App() {
               </div>
             </div>
           </div>
-
           <div className="card fadeIn">
             <div className="cardContent">
               <div>
@@ -448,7 +447,7 @@ function App() {
           CONTACT
         </p>
         <ContactForm />
-        <div>
+        <div className="fadeIn">
           <FaGithubSquare
             onClick={() =>
               window.open("https://github.com/TristanPinzari", "_blank")
