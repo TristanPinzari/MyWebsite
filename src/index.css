@@ -279,10 +279,6 @@ body {
   animation-delay: -20s;
 }
 
-#sliderWrapper2 {
-  transform: translateX(100%);
-}
-
 @keyframes SlideIn {
   from {
     transform: translateX(100%);

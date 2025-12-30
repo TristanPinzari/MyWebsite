@@ -7,6 +7,7 @@ import ImageSlider from "./components/ImageSlider";
 function App() {
   const homeRef = useRef(null);
   const [activeSection, setActiveSection] = useState("home");
+  const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
     if (homeRef.current) {
       if (
@@ -46,9 +47,7 @@ function App() {
     }
     window.addEventListener("scroll", navScroll);
 
-    for (const element of document.getElementsByClassName("sliderWrapper")) {
-      element.classList.add("startAnim");
-    }
+    setIsMounted(true);
 
     return () => {
       window.removeEventListener("scroll", updateActiveSection);
@@ -132,14 +131,20 @@ function App() {
             </p>
           </div>
           <div className="fadeIn">
-            <div className="sliderWrapper" id="sliderWrapper1">
+            <div
+              className={`sliderWrapper ${isMounted ? "startAnim" : ""}`}
+              id="sliderWrapper1"
+            >
               <img className="sliderItem" src={images.party} />
               <img className="sliderItem" src={images.suits} />
               <img className="sliderItem" src={images.christmas} />
               <img className="sliderItem" src={images.shopping} />
               <img className="sliderItem" src={images.viking} />
             </div>
-            <div className="sliderWrapper" id="sliderWrapper2">
+            <div
+              className={`sliderWrapper ${isMounted ? "startAnim" : ""}`}
+              id="sliderWrapper2"
+            >
               <img className="sliderItem" src={images.party} />
               <img className="sliderItem" src={images.suits} />
               <img className="sliderItem" src={images.christmas} />
