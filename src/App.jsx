@@ -3,6 +3,9 @@ import * as images from "./assets";
 
 import HackerText from "./components/HackerText";
 import ImageSlider from "./components/ImageSlider";
+import ContactForm from "./components/ContactForm";
+
+import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 
 function App() {
   const homeRef = useRef(null);
@@ -97,7 +100,7 @@ function App() {
         </button>
         <button
           className={activeSection === "contact" ? "active" : ""}
-          onClick={() => scrollTo("contact")}
+          onClick={() => scrollTo("contactHeader")}
         >
           CONTACT
         </button>
@@ -440,7 +443,27 @@ function App() {
           </div>
         </div>
       </section>
-      <section id="contact"></section>
+      <section id="contact">
+        <p id="contactHeader" className="sectionHeader fadeIn centerText">
+          CONTACT
+        </p>
+        <ContactForm />
+        <div>
+          <FaGithubSquare
+            onClick={() =>
+              window.open("https://github.com/TristanPinzari", "_blank")
+            }
+          />
+          <FaLinkedin
+            onClick={() =>
+              window.open(
+                "https://www.linkedin.com/in/tristan-pinzari-7aa10b2b4/",
+                "_blank"
+              )
+            }
+          />
+        </div>
+      </section>
     </>
   );
 }
