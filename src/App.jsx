@@ -6,6 +6,7 @@ import ImageSlider from "./components/ImageSlider";
 import ContactForm from "./components/ContactForm";
 
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import { MdOutlineAlternateEmail } from "react-icons/md";
 
 function App() {
   const homeRef = useRef(null);
@@ -460,6 +461,9 @@ function App() {
                 "_blank"
               )
             }
+          />
+          <MdOutlineAlternateEmail
+            onClick={() => window.open("mailto:yourname@example.com", "_self")}
           />
         </div>
       </section>

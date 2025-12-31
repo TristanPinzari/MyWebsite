@@ -30,6 +30,12 @@
   }
 }
 
+@media (pointer: none), (pointer: coarse) {
+  .fadeIn {
+    animation: none;
+  }
+}
+
 button,
 a {
   cursor: pointer;
@@ -268,6 +274,11 @@ body {
   gap: 1rem;
   will-change: transform;
   padding-left: 1rem;
+}
+
+.sliderWrapper,
+.sliderWrapper * {
+  transition: none;
 }
 
 .sliderWrapper.startAnim {
@@ -592,16 +603,21 @@ textarea:focus {
 #contact > :last-child {
   margin-top: 4rem;
   display: flex;
+  align-items: center;
   gap: 2rem;
 }
 
-#contact :last-child > * {
+#contact :last-child * {
   fill: var(--inactive);
   width: 40px;
   height: 40px;
   cursor: pointer;
 }
 
-#contact :last-child > *:hover {
+#contact :last-child > :last-child > :nth-child(1) {
+  fill: none;
+}
+
+#contact :last-child > *:hover * {
   fill: white;
 }
