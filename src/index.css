@@ -475,17 +475,23 @@ body {
   position: relative;
   box-shadow: var(--shadow-m);
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .ImageSlider > :first-child {
-  overflow: hidden;
+  overflow-x: auto;
   border-radius: 10px;
   aspect-ratio: 16/9;
   width: 100%;
   display: flex;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  touch-action: pan-x;
   gap: 1px;
+}
+
+.ImageSlider > :first-child::-webkit-scrollbar {
+  display: none;
 }
 
 .ImageSlider :first-child img {
