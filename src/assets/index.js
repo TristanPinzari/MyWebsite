@@ -24,6 +24,10 @@ import notify2 from "./notify2.png";
 import notify3 from "./notify3.png";
 import weather1 from "./weather1.png";
 import weather2 from "./weather2.png";
+import typeracer1 from "./typeracer1.png";
+import typeracer2 from "./typeracer2.png";
+import typeracer3 from "./typeracer3.png";
+import typeracer4 from "./typeracer4.png";
 
 export {
   party,
@@ -52,4 +56,8 @@ export {
   notify1,
   notify2,
   notify3,
+  typeracer1,
+  typeracer2,
+  typeracer3,
+  typeracer4,
 };

@@ -33,7 +33,7 @@ function App() {
         const rect = section.getBoundingClientRect();
         const visiblePixels = Math.max(
           0,
-          Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0)
+          Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0),
         );
         if (visiblePixels > maxVisible) {
           maxVisible = visiblePixels;
@@ -280,7 +280,37 @@ function App() {
               <div>
                 <ImageSlider
                   id="imageSlider1"
-                  images={[images.notify1, images.notify2, images.notify3]}
+                  images={[images.notify2, images.notify3, images.notify1]}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="card fadeIn">
+            <div className="cardContent">
+              <div>
+                <p className="smallHeader centerText cardHeader">TYPERACER</p>
+                <p>
+                  After I finished making this website, I wondered whether I
+                  could recreate the popular typing game website, Typeracer.
+                  Turns out I can.
+                  <br />
+                  <br />I replicated the original website's styling and core
+                  mechanics: public, private, and practice racetracks. I used
+                  React, Node, and Typescript for this project. Notably, this
+                  was my first use of Typescript, and it will definitely not be
+                  my last, being extremely helpful. For my backend, I used
+                  Appwrite for both real-time databasing and functions.
+                </p>
+              </div>
+              <div>
+                <ImageSlider
+                  id="imageSlider1"
+                  images={[
+                    images.typeracer3,
+                    images.typeracer4,
+                    images.typeracer1,
+                    images.typeracer2,
+                  ]}
                 />
               </div>
             </div>
@@ -458,7 +488,7 @@ function App() {
             onClick={() =>
               window.open(
                 "https://www.linkedin.com/in/tristan-pinzari-7aa10b2b4/",
-                "_blank"
+                "_blank",
               )
             }
           />
