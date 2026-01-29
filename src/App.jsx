@@ -304,7 +304,7 @@ function App() {
               </div>
               <div>
                 <ImageSlider
-                  id="imageSlider1"
+                  id="imageSlider7"
                   images={[
                     images.typeracer3,
                     images.typeracer4,
