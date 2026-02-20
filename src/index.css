@@ -76,12 +76,16 @@ body {
   padding: 50px 0 10px 0;
   border: transparent 2px solid;
   border-top: none;
-  transition: border 0.5s ease, backdrop-filter 0.5s ease,
+  transition:
+    border 0.5s ease,
+    backdrop-filter 0.5s ease,
     padding 0.5s ease-out 0.5s;
 }
 
 #navBar[data-scrolled="true"] {
-  transition: padding 0.25s ease, border 0.25s ease 0.25s,
+  transition:
+    padding 0.25s ease,
+    border 0.25s ease 0.25s,
     backdrop-filter 0.25s ease 0.25s;
   padding: 10px 5px;
   border: rgba(255, 255, 255, 0.5) 2px solid;
@@ -526,6 +530,11 @@ body {
 
 #imageSlider6 img {
   background-color: rgba(255, 255, 0, 0.25);
+  object-fit: contain;
+}
+
+#imageSlider8 img {
+  background-color: rgba(255, 255, 255, 0.282);
   object-fit: contain;
 }
 

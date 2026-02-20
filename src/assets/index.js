@@ -28,6 +28,9 @@ import typeracer1 from "./typeracer1.png";
 import typeracer2 from "./typeracer2.png";
 import typeracer3 from "./typeracer3.png";
 import typeracer4 from "./typeracer4.png";
+import twitter1 from "./twitter1.png";
+import twitter2 from "./twitter2.png";
+import twitter3 from "./twitter3.png";
 
 export {
   party,
@@ -60,4 +63,7 @@ export {
   typeracer2,
   typeracer3,
   typeracer4,
+  twitter1,
+  twitter2,
+  twitter3,
 };
