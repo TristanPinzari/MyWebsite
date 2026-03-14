@@ -121,17 +121,18 @@ function App() {
               ABOUT
             </p>
             <p className="fadeIn centerText">
-              Hello, my name is Tristan Pinzari, and I am a full-stack
-              developer. I have experience with a wide range of languages and
-              tools, including React, Node, Git, Firebase, Appwrite, Gemini,
-              HTML, JavaScript, CSS, Java, and Python. I’m deeply interested in
-              problem-solving through code, mathematics, and physics. I’m a fast
-              learner who thrives on new challenges and is always eager to grow!
+              Hello, my name is Tristan Pinzari, and I am a first-year computer
+              science student at Western University and a full-stack developer.
+              I enjoy making all sorts of applications, from practical tools to
+              games. Additionally, I also enjoy learning new programming
+              languages, frameworks, and other development tools.
               <br />
-              <br />I am currently in my first year of undergraduate studies at
-              Western University, majoring in Computer Science. I am pursuing an
-              Honours Specialization in Computer Science and plan to complete a
-              minor in Software Engineering.
+              <br />
+              The job market for software engineers becomes grimmer by the day.
+              However, even the most enthusiastic enthusiasts of AI enthusiasts
+              acknowledge that, in a couple of years, there will still be a
+              small number of human software engineers—the jacks of all trades,
+              masters of all. My goal is to be one of them.
             </p>
           </div>
           <div className="fadeIn">
@@ -322,18 +323,20 @@ function App() {
                   TWITTER CLONE
                 </p>
                 <p>
-                  This is a Twitter clone built with the Phoenix Framework,
-                  Elixir, and Tailwind CSS. The application uses the BEAM
-                  virtual machine to handle real-time functionality such as
-                  personalized user timelines, tweet sharing, and follower
-                  systems with very high concurrency.
+                  In this project, I built a clone of Twitter using Elixir,
+                  Phoenix, and Tailwind. The application has all of Twitter's
+                  main features, including custom feeds and a followers system,
+                  all powered by PostgreSQL relational databases.
                   <br />
                   <br />
-                  The application has an industry-standard authentication
-                  process, which is secure for account activation and password
-                  reset. To make it production-ready, it uses PostgreSQL for
-                  relational database management, Mailjet for transactional
-                  email services, and AWS S3 for cloud media storage.
+                  What I enjoyed the most was designing a custom authentication
+                  system, which includes automated account activation and
+                  password reset emails, as well as cookie and token
+                  management—a free and more robust system compared to Firebase
+                  Authentication.
+                  <br />
+                  <br />I used Mailjet to power the automated emails and AWS S3
+                  to store user-uploaded media on the cloud.
                 </p>
               </div>
               <div>
