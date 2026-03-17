@@ -281,7 +281,12 @@ function App() {
               <div>
                 <ImageSlider
                   id="imageSlider1"
-                  images={[images.notify2, images.notify3, images.notify1]}
+                  images={[
+                    images.notify2,
+                    images.notify1,
+                    images.notify3,
+                    images.notify4,
+                  ]}
                 />
               </div>
             </div>

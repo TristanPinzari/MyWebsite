@@ -538,6 +538,11 @@ body {
   object-fit: contain;
 }
 
+#imageSlider1 img {
+  object-fit: contain;
+  background-color: #f59f0b20;
+}
+
 @media (width <= 1250px) {
   #projectsWrapper {
     width: clamp(325px, 90vw, 750px);
