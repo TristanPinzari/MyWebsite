@@ -324,9 +324,7 @@ function App() {
           <div className="card fadeIn">
             <div className="cardContent">
               <div>
-                <p className="smallHeader centerText cardHeader">
-                  TWITTER CLONE
-                </p>
+                <p className="smallHeader centerText cardHeader">CHATTERBOX</p>
                 <p>
                   In this project, I built a clone of Twitter using Elixir,
                   Phoenix, and Tailwind. The application has all of Twitter's
