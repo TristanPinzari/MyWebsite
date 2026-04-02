@@ -255,7 +255,7 @@ function App() {
               <div>
                 <p className="smallHeader centerText cardHeader">NOTIFY</p>
                 <p>
-                  This is my most recent project, built to help students
+                  This is my favourite project, built to help students
                   collaborate more effectively within their courses. I designed
                   it so users can create courses with unique join codes and
                   role-based permissions, similar to Google Classroom, where
@@ -264,11 +264,11 @@ function App() {
                   <br />
                   The core feature uses Gemini AI to analyze uploaded notes and
                   generate a single master document, with optional features such
-                  as spell, grammar, and fact checks. I intentionally designed
-                  the AI's influence to be scalable as to address concerns
-                  around academic dishonesty; it produces results comparable to
-                  what a student could create independently, just much more
-                  easily and faster.
+                  as spell, grammar, fact checking, etc. I intentionally
+                  designed the AI's influence to be scalable as to address
+                  concerns around academic dishonesty; it produces results
+                  comparable to what a student could create independently, just
+                  much more easily and faster.
                   <br />
                   <br />
                   Targeted at university students, the platform is localized to
@@ -287,6 +287,33 @@ function App() {
                     images.notify3,
                     images.notify4,
                   ]}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="card fadeIn">
+            <div className="cardContent">
+              <div>
+                <p className="smallHeader centerText cardHeader">ZEN REVIEW</p>
+                <p>
+                  This is a desktop application for managing pull requests built
+                  on the GitHub API, designed to help senior engineers triage
+                  and work through large volumes of PRs efficiently. I built two
+                  core parts of the application: the settings module, which
+                  handles GitHub PAT authentication and user configuration, and
+                  the review management system, which lets users assign custom
+                  statuses, priorities, and notes to pull requests to maintain
+                  context across repositories and sessions.
+                  <br />
+                  <br />
+                  Built with Electron, Next.js, TypeScript, and SQLite. First
+                  created and owned by Dalton McPhaden.
+                </p>
+              </div>
+              <div>
+                <ImageSlider
+                  id="imageSlider9"
+                  images={[images.zen1, images.zen2, images.zen3]}
                 />
               </div>
             </div>
