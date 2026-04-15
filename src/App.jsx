@@ -555,7 +555,9 @@ function App() {
             }
           />
           <MdOutlineAlternateEmail
-            onClick={() => window.open("mailto:yourname@example.com", "_self")}
+            onClick={() =>
+              window.open("mailto:tristanpinzari@gmail.com", "_self")
+            }
           />
         </div>
       </section>
