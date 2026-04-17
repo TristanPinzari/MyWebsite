@@ -174,12 +174,12 @@ function App() {
               <div>
                 <div>
                   <p className="smallHeader centerText cardHeader">
-                    SOFTWARE ENGINEERING FELLOW
+                    SOFTWARE ENGINEER
                   </p>
                 </div>
                 <p>
-                  In the summer of 2023, I worked at Headstarter as the Head
-                  Developer in a three-person team. I led the team to
+                  In the summer of 2023, I worked at Headstarter as the lead
+                  developer of a three-person team. I led the team to
                   successfully complete all three full-stack projects we were
                   assigned, demonstrating strong team leadership, adaptability,
                   and resilience by quickly learning new tools and languages and
