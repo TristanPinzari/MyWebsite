@@ -166,6 +166,39 @@ function App() {
             <div>
               <div
                 style={{
+                  backgroundImage: `url(${images.flip}), url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.12'/%3E%3C/svg%3E"), radial-gradient(ellipse 280px 220px at 15% 20%, rgba(100, 50, 210, 0.12), transparent 70%), radial-gradient(ellipse 240px 200px at 85% 75%, rgba(20, 150, 190, 0.1), transparent 70%), radial-gradient(ellipse 200px 180px at 72% 18%, rgba(180, 35, 110, 0.09), transparent 70%), radial-gradient(ellipse 220px 200px at 8% 82%, rgba(10, 170, 130, 0.09), transparent 70%), linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)`,
+                  backgroundColor: "rgb(13, 13, 17)",
+                  backgroundSize: "70%, 180px 180px, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 60px 60px, 60px 60px",
+                  backgroundRepeat: "no-repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat, repeat",
+                  backgroundPosition: "center, 0 0, 0 0, 0 0, 0 0, 0 0, center, center",
+                }}
+              />
+              <div>
+                <div>
+                  <p className="smallHeader centerText cardHeader">
+                    SOFTWARE ENGINEER
+                  </p>
+                </div>
+                <p>
+                  In the summer of 2026, I was a software engineer at FlipPilot,
+                  a SaaS startup automating deal-searching across marketplaces
+                  and retail stores. I engineered features to dynamically expand
+                  supported platforms, built robust workarounds to bypass
+                  bot-protected sites, and delivered critical platform-wide
+                  polish, ultimately shipping all of these core changes directly
+                  to the{" "}
+                  <a href="https://www.flippilot.ca/" target="blank">
+                    production site
+                  </a>
+                  .
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="card fadeIn">
+            <div>
+              <div
+                style={{
                   backgroundImage: `url(${images.headstarter})`,
                   backgroundColor: "rgb(5, 8, 18)",
                   backgroundSize: "125%",
@@ -214,33 +247,6 @@ function App() {
                   infrastructure planning, cabling and wiring, antenna
                   installations, and other technical projects, which
                   strengthened my technical and problem-solving skills.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="card fadeIn">
-            <div>
-              <div
-                style={{
-                  backgroundImage: `url(${images.yrhacks})`,
-                  backgroundColor: "rgb(6, 4, 41)",
-                  backgroundSize: "40%",
-                }}
-              />
-              <div>
-                <div>
-                  <p className="smallHeader centerText cardHeader">
-                    LOGISTICS & OUTREACH EXECUTIVE
-                  </p>
-                </div>
-                <p>
-                  I served on the executive team for YRHacks, Canada’s largest
-                  hackathon organization exclusively for high school students.
-                  In 2024, I contributed to logistics, ensuring smooth event
-                  coordination, and in 2025, I led outreach efforts, securing
-                  sponsorships and fostering community engagement. My work
-                  helped support the overall quality, organization, and success
-                  of both events.
                 </p>
               </div>
             </div>

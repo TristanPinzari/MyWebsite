@@ -35,6 +35,7 @@ import twitter3 from "./twitter3.png";
 import zen1 from "./zen1.png";
 import zen2 from "./zen2.png";
 import zen3 from "./zen3.png";
+import flip from "./flippilot.png";
 
 export {
   party,
@@ -74,4 +75,5 @@ export {
   zen1,
   zen2,
   zen3,
+  flip,
 };

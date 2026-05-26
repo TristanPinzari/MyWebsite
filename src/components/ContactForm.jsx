@@ -18,7 +18,7 @@ export default function ContactForm() {
     setResult(
       data.success
         ? "Message sent!"
-        : "Seems like the API broke. You can directly email me with tristanpinzari@gmail.com"
+        : "Seems like the API broke. You can directly email me with tristanpinzari@gmail.com",
     );
   };
 
