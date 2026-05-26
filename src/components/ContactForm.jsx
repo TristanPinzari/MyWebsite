@@ -6,16 +6,12 @@ export default function ContactForm() {
   const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    formData.append("access_key", "f59554ff-cd1f-45e6-932b-5701f3f396c6");
-
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       body: formData,
     });
-    console.log(formData);
-
     const data = await response.json();
-    console.log(data);
     setResult(data.success ? "Message sent!" : data.message);
   };
 
