@@ -3,7 +3,6 @@ import suits from "./suits.jpg";
 import christmas from "./christmas.jpg";
 import shopping from "./shopping.jpg";
 import viking from "./viking.jpg";
-import yrhacks from "./yrhacks.png";
 import headstarter from "./headstarter.png";
 import cloud9 from "./cloud9nobg.png";
 import resume1 from "./resumeparser1.gif";
@@ -43,7 +42,6 @@ export {
   christmas,
   shopping,
   viking,
-  yrhacks,
   headstarter,
   cloud9,
   resume1,
