@@ -15,11 +15,8 @@ export default function ContactForm() {
     console.log(formData);
 
     const data = await response.json();
-    setResult(
-      data.success
-        ? "Message sent!"
-        : "Seems like the API broke. You can directly email me with tristanpinzari@gmail.com",
-    );
+    console.log(data);
+    setResult(data.success ? "Message sent!" : data.message);
   };
 
   return (

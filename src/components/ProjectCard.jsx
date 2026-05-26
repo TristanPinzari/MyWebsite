@@ -6,7 +6,7 @@ export default function ProjectCard({ title, description, images, id }) {
       <div className="cardContent">
         <div>
           <p className="smallHeader centerText cardHeader">{title}</p>
-          <p>{description}</p>
+          <div>{description}</div>
         </div>
         <div>
           <ImageSlider id={id} images={images} />
