@@ -168,9 +168,12 @@ function App() {
                 style={{
                   backgroundImage: `url(${images.flip}), url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.12'/%3E%3C/svg%3E"), radial-gradient(ellipse 280px 220px at 15% 20%, rgba(100, 50, 210, 0.12), transparent 70%), radial-gradient(ellipse 240px 200px at 85% 75%, rgba(20, 150, 190, 0.1), transparent 70%), radial-gradient(ellipse 200px 180px at 72% 18%, rgba(180, 35, 110, 0.09), transparent 70%), radial-gradient(ellipse 220px 200px at 8% 82%, rgba(10, 170, 130, 0.09), transparent 70%), linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)`,
                   backgroundColor: "rgb(13, 13, 17)",
-                  backgroundSize: "70%, 180px 180px, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 60px 60px, 60px 60px",
-                  backgroundRepeat: "no-repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat, repeat",
-                  backgroundPosition: "center, 0 0, 0 0, 0 0, 0 0, 0 0, center, center",
+                  backgroundSize:
+                    "70%, 180px 180px, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 60px 60px, 60px 60px",
+                  backgroundRepeat:
+                    "no-repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat, repeat",
+                  backgroundPosition:
+                    "center, 0 0, 0 0, 0 0, 0 0, 0 0, center, center",
                 }}
               />
               <div>
@@ -207,7 +210,7 @@ function App() {
               <div>
                 <div>
                   <p className="smallHeader centerText cardHeader">
-                    SOFTWARE ENGINEER
+                    SOFTWARE ENGINEER INTERN
                   </p>
                 </div>
                 <p>
