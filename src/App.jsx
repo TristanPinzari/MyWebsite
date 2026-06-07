@@ -122,7 +122,7 @@ function App() {
               ABOUT
             </p>
             <p className="fadeIn centerText">
-              Hello, my name is Tristan Pinzari, and I am a first-year computer
+              Hello, my name is Tristan Pinzari, and I am a second-year computer
               science student at Western University and a full-stack developer.
               I enjoy making all sorts of applications, from practical tools to
               games. Additionally, I also enjoy learning new programming
