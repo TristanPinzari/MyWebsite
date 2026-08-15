@@ -265,53 +265,48 @@ function App() {
             title="NOTIFY"
             description={
               <p>
-                Notify was born out of a specific frustration: history lectures
-                where information flies by and materials aren't posted online,
-                leaving students stranded if they miss a single point. Built
-                with React, Node.js, and Firebase, the app is designed to bridge
-                these gaps without assuming students have access to expensive
-                textbooks or external resources. Its core strength is
-                localization; using a simple course code system, Notify creates
-                a private space for actual classmates to very easily group up
-                without directly interacting. Unlike massive note-sharing
-                databases that are often cluttered with irrelevant documents
-                from different schools, Notify ensures the only content you see
-                is directly tied to the specific lecture you just attended.
+                Notify (Production) is the ground-up rebuild of the original
+                proof of concept, moving from a weekend MVP to a system built to
+                actually handle a class's worth of real usage. The core idea is
+                unchanged: students pool lecture recordings, slides, and notes
+                into a shared collection, and AI synthesizes them into a single
+                master document per topic. What's changed is everything
+                underneath it.
                 <br />
                 <br />
-                To ensure reliability, Notify allows a classroom to pool their
-                collective notes into a single collection. Using Gemini AI, the
-                app can then synthesize these into a "master document," ensuring
-                that as long as the class as a whole captured the information,
-                the final document is complete. Critically, all AI features are
-                entirely optional to protect academic integrity. Students can
-                choose to toggle off fact-checking or grammar fixes, leaving the
-                app as a purely organizational tool that simply sorts and
-                compiles peer notes. This flexibility allows Notify to function
-                either as an advanced AI study assistant or as a traditional,
-                student-led collaboration hub, depending on the specific needs
-                of the class.
+                The rebuild introduces a proper extraction pipeline: Mistral
+                handles handwriting OCR and audio transcription, the YouTube
+                Transcript API pulls text from recorded lectures, and Gemini
+                compiles everything into the final document, with configurable
+                conflict resolution so pinned or majority sources are trusted
+                when contributions disagree. All of it runs through Temporal
+                workflows in the background, so uploading a source doesn't mean
+                waiting around for it to process. The data layer moved to
+                PostgreSQL with Drizzle ORM, file storage to AWS S3, and
+                authentication to Better Auth, with Sentry and PostHog added for
+                error tracking and product analytics from day one.
                 <br />
                 <br />
-                Notify is a very practical solution to a very real problem, and
-                during the Canadian Tech Summit of 2026, many students testified
-                that they would use it if it were to come into production.
-                Currently Notify, while it does work, serves as a proof of
-                concept, and in the future I plan to assemble a team to make the
-                production version with significant improvements and more
-                functionality and features.
+                Classes now have configurable roles and permissions, a full
+                activity log, and notification controls, so a class of any size
+                can actually run itself without needing an admin to babysit it.
+                Production is still actively being built, with a Fall/Winter
+                rollout to real Western classes as the immediate next step.
                 <br />
                 <br />
-                Built with React, Node, and Firebase.
+                Built with Next.js, PostgreSQL, Drizzle ORM, Temporal, AWS S3,
+                and Better Auth.
               </p>
             }
             images={[
-              images.notify2,
-              images.notify1,
-              images.notify3,
-              images.notify4,
+              images.notifyp1,
+              images.notifyp2,
+              images.notifyp3,
+              images.notifyp4,
+              images.notifyp5,
+              images.notifyp6,
             ]}
-            id="imageSlider1"
+            id="imageSlider10"
           />
           <ProjectCard
             title="ZEN REVIEW"
@@ -408,6 +403,58 @@ function App() {
               images.typeracer2,
             ]}
             id="imageSlider7"
+          />
+          <ProjectCard
+            title="NOTIFY"
+            description={
+              <p>
+                Notify was born out of a specific frustration: history lectures
+                where information flies by and materials aren't posted online,
+                leaving students stranded if they miss a single point. Built
+                with React, Node.js, and Firebase, the app is designed to bridge
+                these gaps without assuming students have access to expensive
+                textbooks or external resources. Its core strength is
+                localization; using a simple course code system, Notify creates
+                a private space for actual classmates to very easily group up
+                without directly interacting. Unlike massive note-sharing
+                databases that are often cluttered with irrelevant documents
+                from different schools, Notify ensures the only content you see
+                is directly tied to the specific lecture you just attended.
+                <br />
+                <br />
+                To ensure reliability, Notify allows a classroom to pool their
+                collective notes into a single collection. Using Gemini AI, the
+                app can then synthesize these into a "master document," ensuring
+                that as long as the class as a whole captured the information,
+                the final document is complete. Critically, all AI features are
+                entirely optional to protect academic integrity. Students can
+                choose to toggle off fact-checking or grammar fixes, leaving the
+                app as a purely organizational tool that simply sorts and
+                compiles peer notes. This flexibility allows Notify to function
+                either as an advanced AI study assistant or as a traditional,
+                student-led collaboration hub, depending on the specific needs
+                of the class.
+                <br />
+                <br />
+                Notify is a very practical solution to a very real problem, and
+                during the Canadian Tech Summit of 2026, many students testified
+                that they would use it if it were to come into production.
+                Currently Notify, while it does work, serves as a proof of
+                concept, and in the future I plan to assemble a team to make the
+                production version with significant improvements and more
+                functionality and features.
+                <br />
+                <br />
+                Built with React, Node, and Firebase.
+              </p>
+            }
+            images={[
+              images.notify2,
+              images.notify1,
+              images.notify3,
+              images.notify4,
+            ]}
+            id="imageSlider1"
           />
           <ProjectCard
             title="WEATHERWATCH"

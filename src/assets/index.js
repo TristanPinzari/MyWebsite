@@ -22,6 +22,12 @@ import notify1 from "./notify1.png";
 import notify2 from "./notify2.png";
 import notify3 from "./notify3.png";
 import notify4 from "./notify4.png";
+import notifyp1 from "./notifyp1.png";
+import notifyp2 from "./notifyp2.png";
+import notifyp3 from "./notifyp3.png";
+import notifyp4 from "./notifyp4.png";
+import notifyp5 from "./notifyp5.png";
+import notifyp6 from "./notifyp6.png";
 import weather1 from "./weather1.png";
 import weather2 from "./weather2.png";
 import typeracer1 from "./typeracer1.png";
@@ -63,6 +69,12 @@ export {
   notify2,
   notify3,
   notify4,
+  notifyp1,
+  notifyp2,
+  notifyp3,
+  notifyp4,
+  notifyp5,
+  notifyp6,
   typeracer1,
   typeracer2,
   typeracer3,

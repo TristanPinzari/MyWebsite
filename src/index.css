@@ -120,7 +120,6 @@ body {
   height: 125vh;
   position: relative;
   background-image: url("assets/bladerunner.jpg");
-  /* animation: movie 400s linear infinite; */
   background-size: cover;
   mask-image: linear-gradient(black, black 75%, transparent);
   background-attachment: fixed;
@@ -151,31 +150,9 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* @keyframes movie {
-  0% {
-    background-position: left top;
-  }
-  25% {
-    background-position: right bottom;
-  }
-  50% {
-    background-position: left bottom;
-  }
-  75% {
-    background-position: right top;
-  }
-  100% {
-    background-position: left top;
-  }
-} */
-
 .highlight {
   text-shadow: 0 0 15px white;
 }
-/* 
-.softHighlight {
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.25);
-} */
 
 #home > :first-child p {
   position: relative;
@@ -255,16 +232,30 @@ body {
 
 #about > :first-child > :nth-child(2) {
   width: 100%;
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  );
   height: clamp(3rem, 20vh, 20rem);
   position: relative;
   overflow: hidden;
+}
+
+#about > :first-child > :nth-child(2)::before,
+#about > :first-child > :nth-child(2)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+#about > :first-child > :nth-child(2)::before {
+  left: 0;
+  background: linear-gradient(to right, black, transparent);
+}
+
+#about > :first-child > :nth-child(2)::after {
+  right: 0;
+  background: linear-gradient(to left, black, transparent);
 }
 
 #about > :first-child > :nth-child(2):hover > div {
@@ -547,6 +538,11 @@ body {
 #imageSlider1 img {
   object-fit: contain;
   background-color: #f59f0b20;
+}
+
+#imageSlider10 img {
+  object-fit: contain;
+  background-color: #c479185c;
 }
 
 @media (width <= 1250px) {

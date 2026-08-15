@@ -23,8 +23,8 @@ function ImageSlider({ id, images = [] }) {
     } else {
       setCurrent(
         Math.round(
-          container.scrollLeft / container.scrollWidth / (1 / images.length)
-        )
+          container.scrollLeft / container.scrollWidth / (1 / images.length),
+        ),
       );
     }
   }
