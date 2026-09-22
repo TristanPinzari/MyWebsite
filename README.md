@@ -1,3 +1,2 @@
-This is my personal website! I just talk about myself and show some pictures of me so you can get a better understanding of what kind of guy I am.
-
+This is my personal website! Here, I talk a little about myself, my experiences, and my projects.
 This project is hosted here: https://tristanpinzari.github.io/MyWebsite/
